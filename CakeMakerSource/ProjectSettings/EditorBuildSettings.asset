@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_CakeMaker/Scenes/ARScene.unity
-    guid: cf0ce2b2f34bd134a94ef050941d4d1f
-  - enabled: 0
     path: Assets/_CakeMaker/Scenes/CakeMakerDecoration.unity
     guid: bd2ad6fc405c9b345b8079083eae034e
+  - enabled: 1
+    path: Assets/_CakeMaker/Scenes/ARScene.unity
+    guid: cf0ce2b2f34bd134a94ef050941d4d1f
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 252043009028d534b95cbf57e67b9f75, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c44a152199e55004c97f71c8f1ecd853, type: 2}

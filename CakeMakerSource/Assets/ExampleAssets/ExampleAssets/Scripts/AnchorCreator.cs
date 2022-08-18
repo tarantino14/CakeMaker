@@ -17,6 +17,8 @@ public class AnchorCreator : MonoBehaviour
     // This is the prefab that will appear every time an anchor is created.
     [SerializeField]
     GameObject m_AnchorPrefab;
+    public Vector3 m_cakeScale = Vector3.one;
+    public AudioSource m_happyBirthdayAudio;
 
     public GameObject AnchorPrefab
     {
@@ -69,7 +71,16 @@ public class AnchorCreator : MonoBehaviour
             // This prefab instance is parented to the anchor to make sure the position of the prefab is consistent
             // with the anchor, since an anchor attached to an ARPlane will be updated automatically by the ARAnchorManager as the ARPlane's exact position is refined.
             var anchor = m_AnchorManager.AttachAnchor(hitPlane, hitPose);
-            Instantiate(m_AnchorPrefab, anchor.transform);
+            //Instantiate(m_AnchorPrefab, anchor.transform);
+
+            CakeDecorationManager cakeDeco = FindObjectOfType<CakeDecorationManager>(true);
+            cakeDeco.transform.parent = anchor.transform;
+            cakeDeco.transform.localPosition = Vector3.zero;
+            cakeDeco.transform.localRotation = Quaternion.identity;
+            cakeDeco.transform.localScale = m_cakeScale;
+            cakeDeco.gameObject.SetActive(true);
+
+            m_happyBirthdayAudio.Play();
 
             if (anchor == null)
             {
@@ -80,6 +91,8 @@ public class AnchorCreator : MonoBehaviour
                 // Stores the anchor so that it may be removed later.
                 m_AnchorPoints.Add(anchor);
             }
+
+            m_PlaneManager.enabled = false;
 
             this.enabled = false;
         }

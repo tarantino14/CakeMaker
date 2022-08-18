@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DigitalRubyShared;
@@ -16,15 +17,28 @@ public class CakeDecorationManager : MonoBehaviour
     public ChipkneWaleCheezein m_chipkuCheezUnderMouse;
     public SelecatableCheezein m_selectedCheez;
     public float m_initialDisWhenChipkuCheezCameUnderMouse;
+    public CakeDecorationFileManager m_fileManager;
     // Protected //
     // Private //
     // Access //
 
     void Start()
     {
-        
+        DontDestroyOnLoad(gameObject);
     }
 
+    public void OnTakeMeToAR()
+    {
+        
+        
+        for(int i=0; i<m_fileManager.m_thingsToSave.Count; i++)
+        {
+            m_fileManager.m_thingsToSave[i].transform.parent = transform;
+        }
+
+        gameObject.SetActive(false);
+        SceneManager.LoadScene("ARScene");
+    }
     public static bool IsPointerOverUIObject()
     {
         bool touchDown = Input.GetMouseButtonDown(0);
