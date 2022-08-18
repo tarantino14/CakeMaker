@@ -18,6 +18,7 @@ public class CakeDecorationManager : MonoBehaviour
     public SelecatableCheezein m_selectedCheez;
     public float m_initialDisWhenChipkuCheezCameUnderMouse;
     public CakeDecorationFileManager m_fileManager;
+    public Light m_cakeLight;
     // Protected //
     // Private //
     // Access //
@@ -29,8 +30,8 @@ public class CakeDecorationManager : MonoBehaviour
 
     public void OnTakeMeToAR()
     {
-        
-        
+
+        m_cakeLight.intensity = m_cakeLight.intensity * 0.1f;
         for(int i=0; i<m_fileManager.m_thingsToSave.Count; i++)
         {
             m_fileManager.m_thingsToSave[i].transform.parent = transform;
