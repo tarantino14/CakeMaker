@@ -58,3 +58,17 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+/CakeMakerSource/Packages/com.ptc.vuforia.engine-10.8.4.tgz
+/CakeMakerSource/Logs
+/CakeMakerSource/obj
+/CakeMakerSource/QCAR
+/CakeMakerSource/UserSettings
+/CakeMakerSource/.vsconfig
+/CakeMakerSource/Assembly-CSharp.csproj
+/CakeMakerSource/Assembly-CSharp-Editor.csproj
+/CakeMakerSource/CakeMakerSource.sln
+/CakeMakerSource/.vs
+/CakeMakerSource/Library
+/CakeMakerSource/Assets/_CakeMaker/Models/candle.blend
+/CakeMakerSource/Assets/_CakeMaker/Models/candle 1.blend
+/CakeMakerSource/Assets/_CakeMaker/Models/flower.blend
