@@ -79,7 +79,14 @@ public class AnchorCreator : MonoBehaviour
             cakeDeco.transform.localRotation = Quaternion.identity;
             cakeDeco.transform.localScale = m_cakeScale;
             cakeDeco.gameObject.SetActive(true);
+            cakeDeco.m_effects.SetActive(true);
 
+            cakeDeco.GetComponent<Animator>().SetTrigger("Spawn");
+
+            for (int i = 0; i < cakeDeco.m_fileManager.m_thingsToSave.Count; i++)
+            {
+                cakeDeco.m_fileManager.m_thingsToSave[i].ActivateCelebration();
+            }
             m_happyBirthdayAudio.Play();
 
             if (anchor == null)

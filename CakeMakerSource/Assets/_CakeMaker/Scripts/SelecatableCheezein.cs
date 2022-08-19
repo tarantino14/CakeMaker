@@ -29,6 +29,11 @@ public class SelecatableCheezein : MonoBehaviour
         Flower03
     }
 
+    public virtual void ActivateCelebration()
+    {
+        
+    }
+
     public virtual void Start()
     {
         m_mainMaterial = m_mainMesh.materials[m_materialIndex];

@@ -19,6 +19,7 @@ public class CakeDecorationManager : MonoBehaviour
     public float m_initialDisWhenChipkuCheezCameUnderMouse;
     public CakeDecorationFileManager m_fileManager;
     public Light m_cakeLight;
+    public GameObject m_effects;
     // Protected //
     // Private //
     // Access //
@@ -38,6 +39,7 @@ public class CakeDecorationManager : MonoBehaviour
         }
 
         gameObject.SetActive(false);
+        transform.localScale = Vector3.zero;
         SceneManager.LoadScene("ARScene");
     }
     public static bool IsPointerOverUIObject()
