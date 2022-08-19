@@ -20,6 +20,9 @@ public class CakeDecorationManager : MonoBehaviour
     public CakeDecorationFileManager m_fileManager;
     public Light m_cakeLight;
     public GameObject m_effects;
+    public TMPro.TMP_InputField m_nameField;
+    public TMPro.TMP_Text m_nameOnCake;
+    public Canvas m_name3DCanvas;
     // Protected //
     // Private //
     // Access //
@@ -27,6 +30,11 @@ public class CakeDecorationManager : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void OnNameChanged(string newName)
+    {
+        m_nameOnCake.text = newName;
     }
 
     public void OnTakeMeToAR()

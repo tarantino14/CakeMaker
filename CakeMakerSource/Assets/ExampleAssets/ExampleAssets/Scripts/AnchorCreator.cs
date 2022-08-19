@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
@@ -19,7 +20,7 @@ public class AnchorCreator : MonoBehaviour
     GameObject m_AnchorPrefab;
     public Vector3 m_cakeScale = Vector3.one;
     public AudioSource m_happyBirthdayAudio;
-
+    public Camera m_camera;
     public GameObject AnchorPrefab
     {
         get => m_AnchorPrefab;
@@ -80,6 +81,7 @@ public class AnchorCreator : MonoBehaviour
             cakeDeco.transform.localScale = m_cakeScale;
             cakeDeco.gameObject.SetActive(true);
             cakeDeco.m_effects.SetActive(true);
+            cakeDeco.m_name3DCanvas.worldCamera = m_camera;
 
             cakeDeco.GetComponent<Animator>().SetTrigger("Spawn");
 
